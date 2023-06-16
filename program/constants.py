@@ -2,10 +2,10 @@ from dydx3.constants import API_HOST_GOERLI, API_HOST_MAINNET
 from decouple import config
 
 # !!!! SELECT MODE !!!!
-MODE = "PRODUCTION"
+MODE = "DEVELOPMENT"
 
 # Close all open positions and orders
-ABORT_ALL_POSITIONS = False
+ABORT_ALL_POSITIONS = True
 
 # Find Cointegrated Pairs
 FIND_COINTEGRATED = True
@@ -25,14 +25,14 @@ WINDOW = 21
 # Thresholds - Opening
 MAX_HALF_LIFE = 24
 ZSCORE_THRESH = 1.5
-USD_PER_TRADE = 5
+USD_PER_TRADE = 50
 USD_MIN_COLLATERAL = 10
 
 # Thresholds - Closing
 CLOSE_AT_ZSCORE_CROSS = True
 
 # Ethereum Address
-ETHEREUM_ADDRESS = "0x9097F75741569246d2f1fB8232a1FaA69B0a809d"
+ETHEREUM_ADDRESS = "0x7bf20056bB9332958B464145A561871B39292285"
 
 # KEYS - PRODUCTION
 # Must be on Mainnet in DYDX
@@ -58,6 +58,6 @@ DYDX_API_PASSPHRASE = DYDX_API_PASSPHRASE_MAINNET if MODE == "PRODUCTION" else D
 HOST = API_HOST_MAINNET if MODE == "PRODUCTION" else API_HOST_GOERLI
 
 # HTTP PROVIDER
-HTTP_PROVIDER_MAINNET = "https://eth-mainnet.g.alchemy.com/v2/RWgPH0cHYyQBkUeGcOcklEz9rLM6uHNu"
-HTTP_PROVIDER_TESTNET = "https://eth-goerli.g.alchemy.com/v2/mJjuB7TQr0-hRJMGg8aiL8YAAg0nsb-J"
+HTTP_PROVIDER_MAINNET = "https://eth-mainnet.g.alchemy.com/v2/-Nnmx3ilD6P3rmjtEXVFIxkW3ehvqVEN"
+HTTP_PROVIDER_TESTNET = "https://eth-goerli.g.alchemy.com/v2/zVbeLg7DH7R4I_ApjnVpE_XNvz969QZc"
 HTTP_PROVIDER = HTTP_PROVIDER_MAINNET if MODE == "PRODUCTION" else HTTP_PROVIDER_TESTNET
